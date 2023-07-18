@@ -1,0 +1,25 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+  }
+  
+  .button-container button.active {
+    color: #fff;
+    background-color: #007bff; /* Use your preferred active background color */
+    opacity: 1;
+  }
+  .button-container button:not(.active) {
+    opacity: 0.6; /* Set the desired opacity for inactive buttons */
+  }
+  
