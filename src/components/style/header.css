@@ -22,4 +22,13 @@
   .button-container button:not(.active) {
     opacity: 0.6; /* Set the desired opacity for inactive buttons */
   }
+
+.raid-container {
+  opacity: 0; /* Start with opacity 0 to hide the component */
+  transition: opacity 2s ease-in; /* Set the transition effect for opacity */
+}
+
+.raid-container.fade-in {
+  opacity: 1; /* When the fade-in class is added, change the opacity to 1 */
+}
   

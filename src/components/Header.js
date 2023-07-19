@@ -4,12 +4,12 @@ import CoxPurple from './CoxPurple'
 import './style/header.css'
 
 const Header = () => {
-  const [selectedOption, setSelectedOption] = useState(null)
+  const [selectedRaidOption, setSelectedRaidOption] = useState(null)
 
-    const handleButtonClick = (button) => {
+    const handleRaidButtonClick = (button) => {
       const options = ['ToaPurple', 'CoxPurple']
       const randomIndex = Math.floor(Math.random() * options.length)
-        setSelectedOption(options[randomIndex])
+        setSelectedRaidOption(options[randomIndex])
     }
 
   return (
@@ -17,27 +17,29 @@ const Header = () => {
       <h2>Select your Path</h2>
       <div className="button-container">
         <button
-          className={selectedOption === 'Raid upgrade' ? 'active' : ''}
-          onClick={() => handleButtonClick('Raid upgrade')}
+          className={selectedRaidOption === 'Raid upgrade' ? 'active' : ''}
+          onClick={() => handleRaidButtonClick('Raid upgrade')}
         >
           Raid upgrade
         </button>
         {/* Conditional rendering based on the selected option */}
-        {selectedOption === 'ToaPurple' && <ToaPurple />}
-        {selectedOption === 'CoxPurple' && <CoxPurple />}
-        <button
+        {/* <button
           className={selectedOption === 'Team challange' ? 'active' : ''}
           onClick={() => handleButtonClick('Team challange')}
-        >
+          >
           Team challange
         </button>
         <button
           className={selectedOption === 'Grind Challange' ? 'active' : ''}
           onClick={() => handleButtonClick('Grind Challange')}
-        >
+          >
           Grind Challange
-        </button>
+        </button> */}
       </div>
+        <div className={`raid-container ${selectedRaidOption ? 'fade-in' : ''}`}>
+          {selectedRaidOption === 'ToaPurple' && <ToaPurple />}
+          {selectedRaidOption === 'CoxPurple' && <CoxPurple />}
+        </div>
     </div>
   )
 }
