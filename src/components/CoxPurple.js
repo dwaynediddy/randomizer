@@ -1,13 +1,4 @@
-import { useState, useEffect } from 'react'
-
-// toa images
-import fang from '../assets/fang.png'
-import lightbearer from '../assets/lightbearer.png'
-import mask from '../assets/mask.png'
-import mbody from '../assets/mbody.png'
-import mchaps from '../assets/mchaps.png'
-import ward from '../assets/ward.png'
-import shadow from '../assets/shadow.png'
+import { useState, useEffect, useMemo } from 'react'
 
 // cox images
 import dex from '../assets/dex.png'
@@ -23,22 +14,14 @@ import claws from '../assets/claws.png'
 import maul from '../assets/maul.png'
 import tbow from '../assets/tbow.png'
 
-const Randomizer = () => {
-    const toaImages = [fang, lightbearer, mask, mbody, mchaps, shadow, ward]
 
-    const coxImages = [dex, arcane, ahat, atop, alegs, buckler, dhcb, dinz, kodai, claws, maul, tbow]
+
+const CoxPurple = () => {
+    const coxImages = useMemo(() => [dex, arcane, ahat, atop, alegs, buckler, dhcb, dinz, kodai, claws, maul, tbow], [])
     
     // const [selectedImages, setSelectedImages] = useState(null)
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % toaImages.length)
-        }, 500)
-
-        return () => clearInterval(interval)
-    },[toaImages])
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -56,8 +39,10 @@ const Randomizer = () => {
 
   return (
     <div>
-        {<img src={toaImages[currentImageIndex]} alt="Flickering" />}
-        {<img src={coxImages[currentImageIndex]} alt="Flickering" />}
+        <div>
+            <h3>COX Purple</h3>
+            {<img src={coxImages[currentImageIndex]} alt="Flickering" />}
+        </div>
         {/* //  button that randomly displays an image from the images array 
         <button onClick={handleRandomizer} />
         {selectedImages && <img src={selectedImages} alt={selectedImages} />} */}
@@ -65,4 +50,4 @@ const Randomizer = () => {
   )
 }
 
-export default Randomizer
+export default CoxPurple
