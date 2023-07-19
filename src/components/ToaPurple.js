@@ -32,14 +32,14 @@ const ToaPurple = () => {
     // }
 
   return (
-    <div>
-        <div>
-            <h3>TOA Purple</h3>
-            {<img src={toaImages[currentImageIndex]} alt="Flickering" />}
-        </div>
-        {/* //  button that randomly displays an image from the images array 
-        <button onClick={handleRandomizer} />
-        {selectedImages && <img src={selectedImages} alt={selectedImages} />} */}
+    <div className="toa-container">
+      <div className="image-container">
+        <h3>TOA Purple</h3>
+        {<img src={toaImages[currentImageIndex]} alt="Flickering" />}
+      </div>
+      <div className="checkbox-container">
+        <input type="checkbox" label="Completed" />
+      </div>
     </div>
   )
 }
