@@ -37,9 +37,6 @@ const ToaPurple = () => {
         <h3>TOA Purple</h3>
         {<img src={toaImages[currentImageIndex]} alt="Flickering" />}
       </div>
-      <div className="checkbox-container">
-        <input type="checkbox" label="Completed" />
-      </div>
     </div>
   )
 }

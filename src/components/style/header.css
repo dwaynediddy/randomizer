@@ -26,6 +26,7 @@
 .raid-container {
   opacity: 0; /* Start with opacity 0 to hide the component */
   transition: opacity 2s ease-in; /* Set the transition effect for opacity */
+  margin-right: 50%;
 }
 
 .raid-container.fade-in {
